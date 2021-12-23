@@ -27,14 +27,12 @@ type Keys struct {
 	Keys []Key `json:"keys"`
 }
 
-// https://keycloak.tuxm.art:8443/auth/realms/tusdesign/protocol/openid-connect/certs
-
 func GetPublicKey(host string, realm string) (token string, err error) {
-	// endPoint := fmt.Sprintf(CERTS_URL, host, realm)
+	endPoint := fmt.Sprintf(CERTS_URL, host, realm)
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "https://keycloak.tuxm.art:8443/auth/realms/tusdesign/protocol/openid-connect/certs", nil)
+	req, err := http.NewRequest("GET", endPoint, nil)
 	if err != nil {
 		return "", err
 	}

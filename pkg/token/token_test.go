@@ -4,8 +4,8 @@ package token_test
 import (
 	"testing"
 
-	"github.com/keycloakclient/pkg/token"
 	"github.com/stretchr/testify/assert"
+	"github.com/tuxiot/keycloakclient/pkg/token"
 )
 
 func TestGetPublicKey(t *testing.T) {
