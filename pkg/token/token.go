@@ -9,7 +9,7 @@ import (
 	"github.com/golang-jwt/jwt"
 )
 
-const CERTS_URL = "https://%s/auth/realms/%s/protocol/openid-connect/certs"
+const CERTS_URL = "%s/auth/realms/%s/protocol/openid-connect/certs"
 
 type Key struct {
 	Kid string   `json:"kid"`
